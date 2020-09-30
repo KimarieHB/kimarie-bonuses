@@ -6,14 +6,14 @@ const soundSchema = new mongoose.Schema({
     {
       title: String,
       composer_performer: String,
+      cover: String,
       tracklist: [
         {
           track_number: String,
           name: String,
           song: String
         }
-      ],
-      cover: String
+      ]
     }
   ]
 });
