@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 const Soundtrack = require('../models/soundtracks.js');
-//const GameModel = require('../models/games.js');
 
 mongoose.connect('mongodb://localhost/bonuses', {
   autoIndex: false,
@@ -15,11 +14,9 @@ mongoose.connect('mongodb://localhost/bonuses', {
 });
 
 const soundtrackSeeds = () => {
-
   let albums  = [];
 
-  for (let i = 1; i <= 101; i++) { //101
-
+  for (let i = 1; i <= 100; i++) {
     let songs = [];
     let listLength = Math.floor(Math.random() * 13) + 9;
 
@@ -54,7 +51,7 @@ const soundtrackSeeds = () => {
 
   Soundtrack.insertMany(albums)
   .then((res) => {
-    console.log('Database seeding complete!');
+    console.log(`Database seeding complete with ${res.length} entries!`);
     mongoose.connection.close();
   }).catch((err) => {
     console.log('seed error:', err);
