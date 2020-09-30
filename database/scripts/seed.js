@@ -15,28 +15,8 @@ mongoose.connect('mongodb://localhost/bonuses', {
 });
 
 let albums  = [];
-let songs = [];
 
-  for (let i = 1; i <= 101; i++) { //101
-
-
-    let listLength = Math.floor(Math.random() * 13) + 9;
-
-      for (let j = 0; j < listLength; j++) {
-        let number = j.toString();
-
-        if (j < 10) {
-          number = number.padStart(2, "0");
-        }
-
-        let song = {
-          track_number: number,
-          name: faker.lorem.words(),
-          song: faker.internet.url()
-        }
-        songs.push(song);
-      }
-
+for (let i = 1; i <= 101; i++) {
     let album = {
       bundle_id: i,
       bonus_info: [
@@ -49,6 +29,27 @@ let songs = [];
       ]
     };
     albums.push(album);
+  }
+
+  const fakeSongList = () => {
+    let songs = [];
+    let listLength = Math.floor(Math.random() * 13) + 9;
+
+    for (let j = 0; j < listLength; j++) {
+      let number = j.toString();
+
+      if (j < 10) {
+        number = number.padStart(2, "0");
+      }
+
+      let song = {
+        track_number: number,
+        name: faker.lorem.words(),
+        song: faker.internet.url()
+      }
+      songs.push(song);
+    }
+    return songs;
   }
 
   Soundtrack.insertMany(albums)

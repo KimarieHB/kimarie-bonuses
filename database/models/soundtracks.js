@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const soundSchema = new mongoose.Schema({
-  bundle_id: { type:Number, unique: true },
+  bundle_id: { type: Number, unique: true },
   bonus_info: [
     {
       title: String,
