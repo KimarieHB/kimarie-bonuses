@@ -1,0 +1,31 @@
+{
+  "name": "kimarie-bonuses",
+  "version": "1.0.0",
+  "description": "Bundle bonuses module (primary)",
+  "main": "index.js",
+  "scripts": {
+    "seed": "node database/scripts/seed.js",
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KimarieHB/kimarie-bonuses.git"
+  },
+  "author": "KimarieHB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KimarieHB/kimarie-bonuses/issues"
+  },
+  "homepage": "https://github.com/KimarieHB/kimarie-bonuses#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.7"
+  },
+  "devDependencies": {
+    "faker": "^5.1.0",
+    "morgan": "^1.10.0"
+  }
+}
