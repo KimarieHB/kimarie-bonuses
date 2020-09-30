@@ -55,8 +55,10 @@ const soundtrackSeeds = () => {
   Soundtrack.insertMany(albums)
   .then((res) => {
     console.log('Database seeding complete!');
+    mongoose.connection.close();
   }).catch((err) => {
     console.log('seed error:', err);
+    mongoose.connection.close();
   });
 
 }
