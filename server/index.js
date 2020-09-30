@@ -36,10 +36,10 @@ app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 })
 
-app.get('/bonus', (req, res) => {
-  //let bundleId = req.body;
-  //console.log(bundleId);
-  Soundtrack.find({ bundle_id: 4 }, (err, data) => {
+app.get('/bonuses/:bundleId', (req, res) => {
+  let bundleId = req.params.bundleId;
+
+  Soundtrack.find({ bundle_id: bundleId }, (err, data) => {
     if (err) {
       res.send(err);
     } else {
