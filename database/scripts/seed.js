@@ -14,13 +14,12 @@ mongoose.connect('mongodb://localhost/bonuses', {
   console.log('DB connection error:', err);
 });
 
-const soundtrackSeeds = () => {
-
-  let albums  = [];
+let albums  = [];
+let songs = [];
 
   for (let i = 1; i <= 101; i++) { //101
 
-    let songs = [];
+
     let listLength = Math.floor(Math.random() * 13) + 9;
 
       for (let j = 0; j < listLength; j++) {
@@ -54,11 +53,9 @@ const soundtrackSeeds = () => {
 
   Soundtrack.insertMany(albums)
   .then((res) => {
-    console.log('Database seeding complete!');
+    console.log(`Database seeding complete with ${res.length} entries!`);
+    mongoose.connection.close();
   }).catch((err) => {
     console.log('seed error:', err);
+    mongoose.connection.close();
   });
-
-}
-
-soundtrackSeeds();
