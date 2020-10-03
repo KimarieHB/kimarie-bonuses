@@ -25,7 +25,6 @@ app.use('/test', (req, res) => {
 })
 
 // To render items in Bonus Tier (passed postman)
-//switch to req query to get id from url
 app.get('/bonus/:bundleId', (req, res) => {
   let bundleId = req.params.bundleId;
 
@@ -39,7 +38,7 @@ app.get('/bonus/:bundleId', (req, res) => {
 })
 
 // To render individual bonus upon click selection
-// use query for multi word title
+// query = /bonus-title?title=word+word+word
 app.get('/bonus-title', (req, res) => {
   //let selectedTitle = req.query.title;
   let selectTitle = 'id quia corporis';
@@ -54,7 +53,7 @@ app.get('/bonus-title', (req, res) => {
 })
 
 // To set up selected track to play
-// use query for mutlti word title
+// query = /bonus-track?name=word+word+word
 app.get('/bonus-track', (req, res) => {
   let trackName = req.query.name;
   console.log(trackName);

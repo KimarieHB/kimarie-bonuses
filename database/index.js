@@ -36,7 +36,6 @@ const getBonusItem = (title, callback) => {
 }
 
 const getSong = (trackName, callback) => {
-  console.log(trackName);
   Soundtrack.find({ "bonus_info.tracklist.name": `${trackName}` }, (err, data) => {
     if (err) {
       err = new Error(err);
