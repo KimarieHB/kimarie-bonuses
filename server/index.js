@@ -19,7 +19,11 @@ app.use(morgan('dev'));
 app.use(parser.urlencoded({ extended: true}));
 app.use(parser.json());
 
+<<<<<<< HEAD
 // Server check
+=======
+// Server connection check
+>>>>>>> a9e57af9313787f5f4748cfd445bfe7a270a757e
 app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 })
