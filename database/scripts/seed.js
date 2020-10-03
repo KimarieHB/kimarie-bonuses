@@ -36,7 +36,7 @@ const fakeSongList = () => {
   return songs;
 }
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 100; i++) {
   let additionalBonus = Math.floor(Math.random() * 100);
 
   let album = {

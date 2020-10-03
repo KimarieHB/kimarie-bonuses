@@ -24,6 +24,7 @@ const getBonuses = (bundleId, callback) => {
   });
 }
 
+// Get individual bonus item info
 const getBonusItem = (title, callback) => {
   Soundtrack.find({ "bonus_info.title": `${title}` }, (err, data) => {
     if (err) {
@@ -35,6 +36,7 @@ const getBonusItem = (title, callback) => {
   });
 }
 
+// Get song to be played upon selection
 const getSong = (trackName, callback) => {
   Soundtrack.find({ "bonus_info.tracklist.name": `${trackName}` }, (err, data) => {
     if (err) {
