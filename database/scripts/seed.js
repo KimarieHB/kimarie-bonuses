@@ -13,51 +13,61 @@ mongoose.connect('mongodb://localhost/bonuses', {
   console.log('DB connection error:', err);
 });
 
-const soundtrackSeeds = () => {
-  let albums  = [];
+let albums  = [];
 
-  for (let i = 1; i <= 100; i++) {
-    let songs = [];
-    let listLength = Math.floor(Math.random() * 13) + 9;
+const fakeSongList = () => {
+  let songs = [];
+  let listLength = Math.floor(Math.random() * 13) + 9;
 
-      for (let j = 0; j < listLength; j++) {
-        let number = j.toString();
+  for (let j = 0; j < listLength; j++) {
+    let number = j.toString();
 
-        if (j < 10) {
-          number = number.padStart(2, "0");
-        }
+    if (j < 10) {
+      number = number.padStart(2, "0");
+    }
 
-        let song = {
-          track_number: number,
-          name: faker.lorem.words(),
-          song: faker.internet.url()
-        }
-        songs.push(song);
-      }
-
-    let album = {
-      bundle_id: i,
-      bonus_info: [
-        {
-          title: faker.lorem.words(),
-          composer_performer: faker.name.findName(),
-          tracklist: songs,
-          cover: faker.image.animals()
-        }
-      ]
-    };
-    albums.push(album);
+    let song = {
+      track_number: number,
+      name: faker.lorem.words(),
+      song: faker.internet.url()
+    }
+    songs.push(song);
   }
-
-  Soundtrack.insertMany(albums)
-  .then((res) => {
-    console.log(`Database seeding complete with ${res.length} entries!`);
-    mongoose.connection.close();
-  }).catch((err) => {
-    console.log('seed error:', err);
-    mongoose.connection.close();
-  });
-
+  return songs;
 }
 
-soundtrackSeeds();
+for (let i = 1; i <= 10; i++) {
+  let additionalBonus = Math.floor(Math.random() * 100);
+
+  let album = {
+    bundle_id: i,
+    bonus_info: [
+      {
+        title: faker.lorem.words(),
+        composer_performer: faker.name.findName(),
+        cover: faker.image.animals(),
+        tracklist: fakeSongList()
+      }
+    ]
+  };
+
+  if (additionalBonus % 2 === 0) {
+    album.bonus_info.push({
+      title: faker.lorem.words(),
+      composer_performer: faker.name.findName(),
+      cover: faker.image.animals(),
+      tracklist: fakeSongList(),
+    });
+  }
+
+  albums.push(album);
+}
+
+Soundtrack.insertMany(albums)
+.then((res) => {
+  console.log(`Database seeding complete with ${res.length} entries!`);
+  mongoose.connection.close();
+}).catch((err) => {
+  console.log('seed error:', err);
+  mongoose.connection.close();
+});
