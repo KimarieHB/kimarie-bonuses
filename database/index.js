@@ -24,6 +24,19 @@ const getBonuses = (bundleId, callback) => {
   })
 }
 
+const getBonusItem = (title, callback) => {
+
+  Soundtrack.find({ "bonus_info.title": `${title}` }, (err, data) => {
+    if (err) {
+      err = new Error(err);
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  });
+}
+
 module.exports = {
-  getBonuses
+  getBonuses,
+  getBonusItem
 }

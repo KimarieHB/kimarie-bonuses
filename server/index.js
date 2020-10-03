@@ -39,9 +39,14 @@ app.get('/bonuses/:bundleId', (req, res) => {
 
 // To render individual bonus upon selection
 //req params vs req query...from event or url
-app.get('/bonus/:name', (req, res) => {
-  let selectTitle = 'dolorem nobis ut';
-  Soundtrack.find({ bonus_info: {
+app.get('/bonus', (req, res) => {
+  let selectTitle = 'id quia corporis';
 
-  }});
+  db.getBonusItem(selectTitle, (err, results) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(results);
+    }
+  })
 })
