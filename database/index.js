@@ -53,9 +53,7 @@ const getSong = (trackName, callback) => {
           }
         }
       }
-      console.log(song);
       callback(null, song);
-
     }
   });
 }

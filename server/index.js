@@ -38,10 +38,8 @@ app.get('/bonus/:bundleId', (req, res) => {
 })
 
 // To render individual bonus upon click selection
-// query = /bonus-title?title=word+word+word
 app.get('/bonus-title', (req, res) => {
-  //let selectedTitle = req.query.title;
-  let selectTitle = 'id quia corporis';
+  let selectedTitle = req.query.title;
 
   db.getBonusItem(selectTitle, (err, results) => {
     if (err) {
@@ -53,11 +51,8 @@ app.get('/bonus-title', (req, res) => {
 })
 
 // To set up selected track to play
-// query = /bonus-track?name=word+word+word
 app.get('/bonus-track', (req, res) => {
   let trackName = req.query.song;
-  console.log(trackName);
-  //let trackName = 'optio omnis nisi';
 
   db.getSong(trackName, (err, results) => {
     if (err) {
