@@ -19,11 +19,7 @@ app.use(morgan('dev'));
 app.use(parser.urlencoded({ extended: true}));
 app.use(parser.json());
 
-<<<<<<< HEAD
-// Server check
-=======
 // Server connection check
->>>>>>> a9e57af9313787f5f4748cfd445bfe7a270a757e
 app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 })
@@ -59,7 +55,7 @@ app.get('/bonus-title', (req, res) => {
 // To set up selected track to play
 // query = /bonus-track?name=word+word+word
 app.get('/bonus-track', (req, res) => {
-  let trackName = req.query.name;
+  let trackName = req.query.song;
   console.log(trackName);
   //let trackName = 'optio omnis nisi';
 

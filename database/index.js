@@ -38,13 +38,24 @@ const getBonusItem = (title, callback) => {
 
 // Get song to be played upon selection
 const getSong = (trackName, callback) => {
-  Soundtrack.find({ "bonus_info.tracklist.name": `${trackName}` }, (err, data) => {
+  Soundtrack.findOne({ "bonus_info.tracklist.name": `${trackName}`}, {"bonus_info.tracklist.$": 1, _id: 0}, (err, data) => {
     if (err) {
       err = new Error(err);
       callback(err);
     } else {
-      console.log(data)
-      callback(null, data);
+      let song;
+      for (let track of data.bonus_info[0].tracklist) {
+        if (track.name === trackName) {
+          song = {
+            trackNo: track.track_number,
+            name: track.name,
+            songUrl: track.song
+          }
+        }
+      }
+      console.log(song);
+      callback(null, song);
+
     }
   });
 }
