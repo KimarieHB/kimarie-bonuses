@@ -4,6 +4,7 @@
   "description": "Bundle bonuses module (primary)",
   "main": "index.js",
   "scripts": {
+    "build-dev": "webpack -d --watch",
     "seed": "node database/scripts/seed.js",
     "start": "nodemon server/index.js",
     "test": "jest"
@@ -29,7 +30,9 @@
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.7",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
