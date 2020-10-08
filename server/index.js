@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(parser.urlencoded({ extended: true}));
 app.use(parser.json());
 
-app.use(express.static(__dirname + '../client/dist'));
+app.use(express.static('client/dist'));
 
 // Port/connection verification
 app.listen(port, () => {
