@@ -4,7 +4,7 @@
   "description": "Bundle bonuses module (primary)",
   "main": "index.js",
   "scripts": {
-    "build-dev": "webpack -d --watch",
+    "react-dev": "webpack -d --watch",
     "seed": "node database/scripts/seed.js",
     "start": "nodemon server/index.js",
     "test": "jest"

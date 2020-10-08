@@ -49,7 +49,7 @@ const getSong = (trackName, callback) => {
           song = {
             trackNo: track.track_number,
             name: track.name,
-            songUrl: track.song
+            songUrl: track.song_url
           }
         }
       }
