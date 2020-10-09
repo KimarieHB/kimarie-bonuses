@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost/bonuses', {
   autoIndex: false,
   dbName: 'bonuses',
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 }).then( () => {
   console.log('Connection to MongoDB successful!');
 }).catch( (err) => {
@@ -26,7 +26,7 @@ const getBonuses = (bundleId, callback) => {
 
 // Get individual bonus item info
 const getBonusItem = (title, callback) => {
-  Soundtrack.find({ "bonus_info.title": `${title}` }, (err, data) => {
+  Soundtrack.find({ 'bonus_info.title': title }, {'bonus_info.$': 1, _id: 0}, (err, data) => {
     if (err) {
       err = new Error(err);
       callback(err);
@@ -38,18 +38,19 @@ const getBonusItem = (title, callback) => {
 
 // Get song to be played upon selection
 const getSong = (trackName, callback) => {
-  Soundtrack.findOne({ "bonus_info.tracklist.name": `${trackName}`}, {"bonus_info.tracklist.$": 1, _id: 0}, (err, data) => {
+  Soundtrack.findOne({ 'bonus_info.tracklist.name': trackName}, {'bonus_info.tracklist.$': 1, _id: 0}, (err, data) => {
     if (err) {
       err = new Error(err);
       callback(err);
     } else {
       let song;
+      console.log(data);
       for (let track of data.bonus_info[0].tracklist) {
         if (track.name === trackName) {
           song = {
             trackNo: track.track_number,
             name: track.name,
-            songUrl: track.song
+            songUrl: track.song_url,
           }
         }
       }
@@ -61,5 +62,5 @@ const getSong = (trackName, callback) => {
 module.exports = {
   getBonuses,
   getBonusItem,
-  getSong
+  getSong,
 }
