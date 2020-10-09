@@ -11,7 +11,7 @@ const soundSchema = new mongoose.Schema({
         {
           track_number: String,
           name: String,
-          song: String
+          song_url: String,
         }
       ]
     }
