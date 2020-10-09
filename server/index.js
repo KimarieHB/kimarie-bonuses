@@ -6,10 +6,6 @@ const db = require('../database/index.js');
 
 let port = 3031;
 
-if (port === null || port === '') {
-  port = 3031
-}
-
 // Port/connection verification
 app.listen(port, () => {
   console.log(`Successful connection! Listening at port ${port}`);
@@ -41,7 +37,7 @@ app.get('/bonus/:bundleId', (req, res) => {
 app.get('/bonus-title', (req, res) => {
   let selectedTitle = req.query.title;
 
-  db.getBonusItem(selectTitle, (err, results) => {
+  db.getBonusItem(selectedTitle, (err, results) => {
     if (err) {
       res.send(err);
     } else {

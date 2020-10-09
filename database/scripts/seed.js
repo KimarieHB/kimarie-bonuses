@@ -7,9 +7,9 @@ mongoose.connect('mongodb://localhost/bonuses', {
   dbName: 'bonuses',
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then( () => {
+}).then(() => {
   console.log('Connection to MongoDB successful!');
-}).catch( (err) => {
+}).catch((err) => {
   console.log('DB connection error:', err);
 });
 
@@ -29,7 +29,7 @@ const fakeSongList = () => {
     let song = {
       track_number: number,
       name: faker.lorem.words(),
-      song: faker.internet.url()
+      song_url: faker.internet.url()
     }
     songs.push(song);
   }
@@ -46,7 +46,7 @@ for (let i = 1; i <= 100; i++) {
         title: faker.lorem.words(),
         composer_performer: faker.name.findName(),
         cover: faker.image.animals(),
-        tracklist: fakeSongList()
+        tracklist: fakeSongList(),
       }
     ]
   };
