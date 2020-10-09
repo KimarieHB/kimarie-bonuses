@@ -11,11 +11,7 @@ const soundSchema = new mongoose.Schema({
         {
           track_number: String,
           name: String,
-<<<<<<< HEAD
-          song_url: String
-=======
           song_url: String,
->>>>>>> e7eb9707c712fccf780053f6d575e8cf13f9115d
         }
       ]
     }

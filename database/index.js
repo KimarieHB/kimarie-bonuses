@@ -26,11 +26,7 @@ const getBonuses = (bundleId, callback) => {
 
 // Get individual bonus item info
 const getBonusItem = (title, callback) => {
-<<<<<<< HEAD
-  Soundtrack.find({ 'bonus_info.title': title }, (err, data) => {
-=======
   Soundtrack.find({ 'bonus_info.title': title }, {'bonus_info.$': 1, _id: 0}, (err, data) => {
->>>>>>> e7eb9707c712fccf780053f6d575e8cf13f9115d
     if (err) {
       err = new Error(err);
       callback(err);
@@ -42,11 +38,7 @@ const getBonusItem = (title, callback) => {
 
 // Get song to be played upon selection
 const getSong = (trackName, callback) => {
-<<<<<<< HEAD
-  Soundtrack.findOne({ 'bonus_info.tracklist.name': trackName }, { 'bonus_info.tracklist.$': 1, _id: 0}, (err, data) => {
-=======
-  Soundtrack.findOne({ 'bonus_info.tracklist.name': trackName}, {'bonus_info.tracklist.$': 1, _id: 0}, (err, data) => {
->>>>>>> e7eb9707c712fccf780053f6d575e8cf13f9115d
+  Soundtrack.findOne({ 'bonus_info.tracklist.name': trackName }, { 'bonus_info.tracklist.$': 1, _id: 0 }, (err, data) => {
     if (err) {
       err = new Error(err);
       callback(err);
@@ -58,11 +50,7 @@ const getSong = (trackName, callback) => {
           song = {
             trackNo: track.track_number,
             name: track.name,
-<<<<<<< HEAD
-            songUrl: track.song_url
-=======
             songUrl: track.song_url,
->>>>>>> e7eb9707c712fccf780053f6d575e8cf13f9115d
           }
         }
       }

@@ -6,15 +6,12 @@ const db = require('../database/index.js');
 
 let port = 3031;
 
-<<<<<<< HEAD
 app.use(morgan('dev'));
 app.use(parser.urlencoded({ extended: true}));
 app.use(parser.json());
 
 app.use(express.static('client/dist'));
 
-=======
->>>>>>> e7eb9707c712fccf780053f6d575e8cf13f9115d
 // Port/connection verification
 app.listen(port, () => {
   console.log(`Successful connection! Listening at port ${port}`);
