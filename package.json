@@ -4,6 +4,7 @@
   "description": "Bundle bonuses module (primary)",
   "main": "index.js",
   "scripts": {
+    "react-dev": "webpack -d --watch",
     "seed": "node database/scripts/seed.js",
     "start": "nodemon server/index.js",
     "test": "jest"
@@ -19,10 +20,19 @@
   },
   "homepage": "https://github.com/KimarieHB/kimarie-bonuses#readme",
   "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.2",
-    "mongoose": "^5.10.7"
+    "mongoose": "^5.10.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
