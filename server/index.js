@@ -7,7 +7,7 @@ const db = require('../database/index.js');
 let port = 3031;
 
 app.use(morgan('dev'));
-app.use(parser.urlencoded({ extended: true}));
+app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
 app.use(express.static('client/dist'));
