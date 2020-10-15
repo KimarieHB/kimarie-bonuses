@@ -15,14 +15,15 @@ app.use(express.static('client/dist'));
 // Port/connection verification
 app.listen(port, () => {
   console.log(`Successful connection! Listening at port ${port}`);
-})
+});
 
 // Server connection check
 app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
-})
+});
 
-// To render items in Bonus Tier (passed postman)
+
+// To render items in Bonus Tier
 app.get('/bonus/:bundleId', (req, res) => {
   let bundleId = req.params.bundleId;
 
@@ -33,7 +34,7 @@ app.get('/bonus/:bundleId', (req, res) => {
       res.json(results);
     }
   })
-})
+});
 
 // To render individual bonus upon click selection
 app.get('/bonus-title', (req, res) => {
@@ -46,7 +47,7 @@ app.get('/bonus-title', (req, res) => {
       res.json(results);
     }
   })
-})
+});
 
 // To set up selected track to play
 app.get('/bonus-track', (req, res) => {
@@ -59,4 +60,4 @@ app.get('/bonus-track', (req, res) => {
       res.json(results);
     }
   })
-})
+});

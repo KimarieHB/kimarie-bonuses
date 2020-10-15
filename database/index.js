@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/bonuses', {
 
 // Get bonus associated with bundle
 const getBonuses = (bundleId, callback) => {
-  Soundtrack.find({ bundle_id: bundleId }, (err, data) => {
+  Soundtrack.find({ bundle_id: bundleId }, { _id: 0, 'bonus_info._id': 0, 'bonus_info.tracklist._id': 0 }, (err, data) => {
     if (err) {
       err = new Error(err);
       callback(err);
@@ -26,7 +26,7 @@ const getBonuses = (bundleId, callback) => {
 
 // Get individual bonus item info
 const getBonusItem = (title, callback) => {
-  Soundtrack.find({ 'bonus_info.title': title }, {'bonus_info.$': 1, _id: 0}, (err, data) => {
+  Soundtrack.find({ 'bonus_info.title': title }, { 'bonus_info.$': 1, _id: 0, 'bonus_info._id': 0, 'bonus_info.tracklist._id': 0 }, (err, data) => {
     if (err) {
       err = new Error(err);
       callback(err);
@@ -38,7 +38,7 @@ const getBonusItem = (title, callback) => {
 
 // Get song to be played upon selection
 const getSong = (trackName, callback) => {
-  Soundtrack.findOne({ 'bonus_info.tracklist.name': trackName }, { 'bonus_info.tracklist.$': 1, _id: 0 }, (err, data) => {
+  Soundtrack.findOne({ 'bonus_info.tracklist.name': trackName }, { 'bonus_info.tracklist.$': 1, _id: 0, 'bonus_info._id': 0, 'bonus_info.tracklist._id': 0 }, (err, data) => {
     if (err) {
       err = new Error(err);
       callback(err);
