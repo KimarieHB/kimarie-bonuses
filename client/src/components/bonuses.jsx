@@ -7,7 +7,8 @@ class Bonuses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bundleNumber: 1, //number
+      bonusTitle: 'Bonus',
+      bundleNumber: null, //number
       bonus: { bonus_info: [{ cover: '' }] }, //object
       selectedSong: '', //string, representing url
     };
@@ -16,10 +17,15 @@ class Bonuses extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounted')
-    $.get(`/bonus/${this.state.bundleNumber}`, (data) => {
+    let bundleId = parseInt(window.location.pathname.slice(6));
+    console.log(bundleId)
+
+    $.get(`/bonus/${bundleId}`, (data) => {
       console.log(data);
-      this.setState({ bonus: data });
+      this.setState({ bonus: data[0] });
+      if (data[0].bonus_info.length > 1) {
+        this.setState({ bonusTitle: 'Bonuses' })
+      }
     });
   }
 
@@ -28,17 +34,11 @@ class Bonuses extends React.Component {
   }
 
   render() {
-    let bonusTitle;
-    if (this.state.bonus && this.state.bonus.bonus_info.length === 1) {
-      bonusTitle = <h3>Bonus</h3>;
-    } else {
-      bonusTitle = <h3>Bonuses</h3>;
-    }
 
     return (
       <div className='bonus-tier'>
         <div className='bonus-title'>
-          {bonusTitle}
+          <h2>{this.state.bonusTitle}</h2>
         </div>
         <div>
           <BonusItem bonus={this.state.bonus} selectSong={this.selectSong} />
@@ -47,5 +47,5 @@ class Bonuses extends React.Component {
     );
   }
 }
-  // const bonusItems = props.bonus.bonus_info;
+
 export default Bonuses;

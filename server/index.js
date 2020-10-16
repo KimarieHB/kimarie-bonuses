@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 const morgan = require('morgan');
 const parser = require('body-parser');
 const db = require('../database/index.js');
@@ -22,6 +23,9 @@ app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 });
 
+router.get('/', (req, res) => {
+  res.redirect('/bonus/1');
+})
 
 // To render items in Bonus Tier
 app.get('/bonus/:bundleId', (req, res) => {
