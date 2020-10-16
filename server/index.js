@@ -23,8 +23,19 @@ app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 });
 
-router.get('/', (req, res) => {
-  res.redirect('/bonus/1');
+app.get('/:id', (req, res) => {
+  if (req.params.id > 100 || req.params.id < 1) {
+    let errorMessage = 'Out of range error! Please choose a number 1 - 100.'
+    res.send(errorMessage);
+  } else {
+    res.sendFile('/index.html', (err) => {
+      if (err) {
+        next(err);
+      } else {
+        console.log('HTML re-served');
+      }
+    })
+  }
 })
 
 // To render items in Bonus Tier
