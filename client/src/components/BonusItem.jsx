@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const BonusItem = (props) => {
-
   return (
     <div className='bonus-item-cover'>
       <span>
