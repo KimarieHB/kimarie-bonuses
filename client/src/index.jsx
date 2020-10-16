@@ -2,4 +2,4 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Bonuses from './components/bonuses.jsx';
 
-ReactDOM.render(<App />, document.getElementById('bonuses'));
+ReactDOM.render(<Bonuses />, document.getElementById('bonuses'));
