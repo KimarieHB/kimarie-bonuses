@@ -9,14 +9,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       bundleNumber: 1, //number
-      bonus: null, //object
-      selectedSong: '', //url
+      bonus: { bonus_info: [{ cover: '' }] }, //object
+      selectedSong: '', //string, representing url
     };
 
     this.selectSong = this.selectSong.bind(this);
   }
   componentDidMount() {
+    console.log('mounted')
     $.get(`/bonus/${this.state.bundleNumber}`, (data) => {
+      console.log(data);
       this.setState({ bonus: data });
     });
   }
