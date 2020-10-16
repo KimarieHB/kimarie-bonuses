@@ -30,7 +30,7 @@ app.get('/:id', (req, res) => {
   } else {
     res.sendFile('/index.html', (err) => {
       if (err) {
-        next(err);
+        res.send(err);
       } else {
         console.log('HTML re-served');
       }

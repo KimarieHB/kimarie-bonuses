@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import BonusItem from './BonusItem.jsx';
 
@@ -27,6 +26,7 @@ class Bonuses extends React.Component {
 
     console.log('bundleId', bundleId);
 
+    //add error handling no [0] or bonus_info
     $.get(`/bonus/${bundleId}`, (data) => {
       console.log('data',data);
       this.setState({ bonus: data[0] });
