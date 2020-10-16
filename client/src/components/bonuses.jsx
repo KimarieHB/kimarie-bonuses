@@ -17,11 +17,18 @@ class Bonuses extends React.Component {
   }
 
   componentDidMount() {
-    let bundleId = parseInt(window.location.pathname.slice(6));
-    console.log(bundleId)
+    let bundleId = window.location.pathname;
+
+    if (bundleId === '/') {
+      bundleId = 1;
+    } else {
+      bundleId = parseInt(bundleId.slice(1));
+    }
+
+    console.log('bundleId', bundleId);
 
     $.get(`/bonus/${bundleId}`, (data) => {
-      console.log(data);
+      console.log('data',data);
       this.setState({ bonus: data[0] });
       if (data[0].bonus_info.length > 1) {
         this.setState({ bonusTitle: 'Bonuses' })
