@@ -22,16 +22,15 @@ class Bonuses extends React.Component {
     if (bundleId === '/') {
       bundleId = 1;
     } else {
-      console.log('path name', bundleId);
       bundleId = parseInt(bundleId.slice(1));
     }
-    console.log('bundleId', bundleId);
+
     $.get(`/bonus/${bundleId}`, (data) => {
-      console.log('data',data);
-      if (data[0] && data[0].bonus_info.length > 1) {
+      if (data[0].bonus_info.length > 1) {
         this.setState({ bonusTitle: 'Bonuses' });
-        this.setState({ bonus: data[0] });
       }
+
+      this.setState({ bonus: data[0] });
     });
   }
 

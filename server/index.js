@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const path = require('path');
 const morgan = require('morgan');
 const parser = require('body-parser');
 const db = require('../database/index.js');
@@ -23,12 +24,17 @@ app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 });
 
+// app.get('*', (req, res) => {
+//   res.sendFile('index.html', { root: __dirname })
+// })
+
 app.get('/:id', (req, res) => {
   if (req.params.id > 100 || req.params.id < 1) {
     let errorMessage = 'Out of range error! Please choose a number 1 - 100.'
     res.send(errorMessage);
+  // need to handle if id is in range ??
   } else {
-    res.sendFile('/index.html', (err) => {
+    res.sendFile('/Users/kimmybeee/Desktop/kimarie-bonuses/client/dist/index.html', (err) => {
       if (err) {
         res.send(err);
       } else {
