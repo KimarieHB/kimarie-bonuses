@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import BonusItem from './BonusItem.jsx';
+import BonusItems from './BonusItems.jsx';
 
 class Bonuses extends React.Component {
   constructor(props) {
@@ -13,24 +12,34 @@ class Bonuses extends React.Component {
       selectedSong: '', //string, representing url
     };
 
+    this.selectAlbum = this.selectAlbum.bind(this);
     this.selectSong = this.selectSong.bind(this);
   }
 
   componentDidMount() {
-    let bundleId = parseInt(window.location.pathname.slice(6));
-    console.log(bundleId)
+    let bundleId = window.location.pathname;
+
+    if (bundleId === '/') {
+      bundleId = 1;
+    } else {
+      bundleId = parseInt(bundleId.slice(1));
+    }
 
     $.get(`/bonus/${bundleId}`, (data) => {
-      console.log(data);
-      this.setState({ bonus: data[0] });
       if (data[0].bonus_info.length > 1) {
-        this.setState({ bonusTitle: 'Bonuses' })
+        this.setState({ bonusTitle: 'Bonuses' });
       }
+      this.setState({ bonus: data[0] });
+      this.setState({ bundleNumber: bundleId })
     });
   }
 
-  selectSong() {
-    console.log('clicked');
+  selectAlbum(event) {
+    console.log('Album clicked!');
+  }
+
+  selectSong(event) {
+    console.log('Song clicked!');
   }
 
   render() {
@@ -41,7 +50,7 @@ class Bonuses extends React.Component {
           <h2>{this.state.bonusTitle}</h2>
         </div>
         <div>
-          <BonusItem bonus={this.state.bonus} selectSong={this.selectSong} />
+          <BonusItems bonus={this.state.bonus} selectAlbum={this.selectAlbum} selectSong={this.selectSong} />
         </div>
       </div>
     );
