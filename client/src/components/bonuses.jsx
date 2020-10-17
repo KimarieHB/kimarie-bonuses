@@ -29,8 +29,8 @@ class Bonuses extends React.Component {
       if (data[0].bonus_info.length > 1) {
         this.setState({ bonusTitle: 'Bonuses' });
       }
-
       this.setState({ bonus: data[0] });
+      this.setState({ bundleNumber: bundleId })
     });
   }
 

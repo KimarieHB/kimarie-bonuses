@@ -5,7 +5,7 @@ const BonusItems = (props) => {
 
   const bonusAlbums = albums.map((album, index) => {
     return (
-      <div className='bonus-album' key={index}>
+      <div className='bonus-album' key={album.index}>
         <div className='bonus-item-cover' value={album.title} onClick={(event) => props.selectAlbum(event)}>
           <span>
             <img src={album.cover} alt='Awesome Bonus Sountrack'></img>
@@ -26,4 +26,3 @@ const BonusItems = (props) => {
 }
 
 export default BonusItems;
-//onAlbumClick={(event) => props.selectAlbum(event)}
