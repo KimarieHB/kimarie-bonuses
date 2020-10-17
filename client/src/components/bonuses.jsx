@@ -22,6 +22,7 @@ class Bonuses extends React.Component {
     if (bundleId === '/') {
       bundleId = 1;
     } else {
+      console.log('path name', bundleId);
       bundleId = parseInt(bundleId.slice(1));
     }
     console.log('bundleId', bundleId);
