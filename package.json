@@ -41,5 +41,6 @@
     "jest": "^26.5.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "proxy": "http://localhost:3033"
 }

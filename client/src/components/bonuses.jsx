@@ -24,8 +24,14 @@ class Bonuses extends React.Component {
     } else {
       bundleId = parseInt(bundleId.slice(1));
     }
+    console.log('bundleId', bundleId);
 
+    //sent to route with number in range
     $.get(`/bonus/${bundleId}`, (data) => {
+      console.log('React params out:', `/bonus/${bundleId}`);
+      console.log('React get fired');
+      console.log('data', data);
+
       if (data[0].bonus_info.length > 1) {
         this.setState({ bonusTitle: 'Bonuses' });
       }
