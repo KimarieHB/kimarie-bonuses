@@ -23,12 +23,11 @@ app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 });
 
-//Re-write to handle if the number is in range
+//Get request fired by the change in URL
 app.get('/:id', (req, res) => {
   if (req.params.id > 100 || req.params.id < 1) {
     let errorMessage = 'Out of range error! Please choose a number 1 - 100.'
     res.send(errorMessage);
-
   } else {
       res.sendFile('/Users/kimmybeee/Desktop/kimarie-bonuses/client/dist/index.html', (err) => {
       if (err) {
@@ -40,7 +39,7 @@ app.get('/:id', (req, res) => {
   }
 });
 
-//To render items in Bonus Tier
+//Get request fired from within the HTML
 app.get('/bonus/:id', (req, res) => {
   let bundleId = req.params.id;
   console.log(bundleId);

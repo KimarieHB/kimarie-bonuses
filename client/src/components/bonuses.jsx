@@ -6,7 +6,7 @@ class Bonuses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bonusTitle: 'Bonus',
+      bonusHeading: 'Bonus',
       bundleNumber: null, //number
       bonus: { bonus_info: [{ cover: '' }] }, //object
       selectedSong: '', //string, representing url
@@ -26,14 +26,12 @@ class Bonuses extends React.Component {
     }
     console.log('bundleId', bundleId);
 
-    //sent to route with number in range
-    $.get(`/bonus/${bundleId}`, (data) => {
-      console.log('React params out:', `/bonus/${bundleId}`);
-      console.log('React get fired');
-      console.log('data', data);
+    $.get(`bonus/${bundleId}`, (data) => {
+      console.log('React "get" fired');
+      console.log('React data', data);
 
       if (data[0].bonus_info.length > 1) {
-        this.setState({ bonusTitle: 'Bonuses' });
+        this.setState({ bonusHeading: 'Bonuses' });
       }
       this.setState({ bonus: data[0] });
       this.setState({ bundleNumber: bundleId })
@@ -53,7 +51,7 @@ class Bonuses extends React.Component {
     return (
       <div className='bonus-tier'>
         <div className='bonus-title'>
-          <h2>{this.state.bonusTitle}</h2>
+          <h2>{this.state.bonusHeading}</h2>
         </div>
         <div>
           <BonusItems bonus={this.state.bonus} selectAlbum={this.selectAlbum} selectSong={this.selectSong} />
