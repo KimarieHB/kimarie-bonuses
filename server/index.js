@@ -24,33 +24,38 @@ app.use('/test', (req, res) => {
 });
 
 //Get request fired by the change in URL
-app.get('/:id', (req, res) => {
-  if (req.params.id > 100 || req.params.id < 1) {
-    let errorMessage = 'Out of range error! Please choose a number 1 - 100.'
-    res.send(errorMessage);
-  } else {
-      res.sendFile('/Users/kimmybeee/Desktop/kimarie-bonuses/client/dist/index.html', (err) => {
-      if (err) {
-        res.send(err);
-      } else {
-        console.log('HTML re-served');
-      }
-    });
-  }
-});
+// app.get('/:id', (req, res) => {
+//   if (req.params.id > 100 || req.params.id < 1) {
+//     let errorMessage = 'Out of range error! Please choose a number 1 - 100.'
+//     res.send(errorMessage);
+//   } else {
+//       res.sendFile('/Users/kimmybeee/Desktop/kimarie-bonuses/client/dist/index.html', (err) => {
+//       if (err) {
+//         res.send(err);
+//       } else {
+//         console.log('HTML re-served');
+//       }
+//     });
+//   }
+// });
 
 //Get request fired from within the HTML
 app.get('/bonus/:id', (req, res) => {
   let bundleId = req.params.id;
   console.log(bundleId);
 
-  db.getBonuses(bundleId, (err, results) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.json(results);
-    }
-  })
+  if (bundleId > 100 || bundleId < 1) {
+    let errorMessage = 'Out of range error! Please choose a number 1 - 100.'
+    res.status(404).send(errorMessage);
+  } else {
+    db.getBonuses(bundleId, (err, results) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(results);
+      }
+    })
+  }
 });
 
 // To render individual bonus upon click selection
@@ -78,3 +83,13 @@ app.get('/bonus-track', (req, res) => {
     }
   })
 });
+
+app.get('*', (req, res) => {
+  res.sendFile('/Users/kimmybeee/Desktop/kimarie-bonuses/client/dist/index.html', (err) => {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log('HTML re-served');
+    }
+  })
+})
