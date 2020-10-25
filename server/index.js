@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const cors = require('cors');
+const path = require('path');
 const morgan = require('morgan');
 const parser = require('body-parser');
 const db = require('../database/index.js');
@@ -24,7 +26,7 @@ app.use('/test', (req, res) => {
 });
 
 //Get request fired from within the HTML
-app.get('/bonus/:id', (req, res) => {
+app.get('/bonus/:id', cors(), (req, res) => {
   let bundleId = req.params.id;
   console.log(bundleId);
   db.getBonuses(bundleId, (err, results) => {
@@ -63,7 +65,7 @@ app.get('/bonus-track', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile('/Users/kimmybeee/Desktop/kimarie-bonuses/client/dist/index.html', (err) => {
+  res.sendFile(path.join(__dirname + '/../client/dist/index.html'), (err) => {
     if (err) {
       res.send(err);
     } else {

@@ -24,21 +24,29 @@ class Bonuses extends React.Component {
       bundleId = 1;
     } else {
       bundleId = parseInt(bundleId.slice(1));
+
       if (bundleId < 1 || bundleId > 100) {
         this.setState({ showWarning : true });
       }
     }
 
-    $.get(`bonus/${bundleId}`, (data) => {
-      console.log('React "get" fired');
-      console.log('React data', data);
-
-      if (data[0].bonus_info.length > 1) {
-        this.setState({ bonusHeading: 'Bonuses' });
+    $.ajax({
+      method: 'GET',
+      url: `http://localhost:3031/bonus/${bundleId}`,
+      crossDomain: true,
+      error: (err) => {
+        console.log(err);
       }
-      this.setState({ bonus: data[0] });
-      this.setState({ bundleNumber: bundleId })
-    });
+    })
+    .done((data) => {
+      if (data[0]) {
+        if (data[0].bonus_info.length > 1) {
+          this.setState({ bonusHeading: 'Bonuses' });
+        }
+        this.setState({ bonus: data[0] });
+        this.setState({ bundleNumber: bundleId });
+      }
+    })
   }
 
   selectAlbum(event) {
