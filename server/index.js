@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const cors = require('cors');
 const path = require('path');
 const morgan = require('morgan');
 const parser = require('body-parser');
@@ -24,26 +25,10 @@ app.use('/test', (req, res) => {
   res.send('3-2-1 testing! Server is serving!');
 });
 
-app.get('/:id', (req, res) => {
-  if (req.params.id > 100 || req.params.id < 1) {
-    let errorMessage = 'Out of range error! Please choose a number 1 - 100.'
-    res.send(errorMessage);
-
-  } else {
-    res.sendFile('/Users/kimmybeee/Desktop/kimarie-bonuses/client/dist/index.html', (err) => {
-      if (err) {
-        res.send(err);
-      } else {
-        console.log('HTML re-served');
-      }
-    });
-  }
-});
-
-// To render items in Bonus Tier
-app.get('/bonus/:bundleId', (req, res) => {
-  let bundleId = req.params.bundleId;
-
+//Get request fired from within the HTML
+app.get('/bonus/:id', cors(), (req, res) => {
+  let bundleId = req.params.id;
+  console.log(bundleId);
   db.getBonuses(bundleId, (err, results) => {
     if (err) {
       res.send(err);
@@ -78,3 +63,13 @@ app.get('/bonus-track', (req, res) => {
     }
   })
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../client/dist/index.html'), (err) => {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log('HTML re-served');
+    }
+  })
+})
