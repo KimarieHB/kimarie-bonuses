@@ -72,4 +72,4 @@ app.get('*', (req, res) => {
       console.log('HTML re-served');
     }
   })
-})
+});
