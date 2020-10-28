@@ -1,0 +1,427 @@
+[
+  {
+    "bundle_id" : 1,
+    "bonus_info" : [
+      {
+        "title" : "quasi consectetur aut",
+        "composer_performer" : "Bill Langworth",
+        "cover" : "http://placeimg.com/640/480/animals",
+        "tracklist" : [
+          {
+            "track_number" : "00",
+            "name" : "minus deleniti quia",
+            "song_url" : "https://laurie.org"
+          },
+          {
+            "track_number" : "01",
+            "name" : "in aut veniam",
+            "song_url" : "http://elyse.org"
+          },
+          {
+            "track_number" : "02",
+            "name" : "accusamus facere beatae",
+            "song_url" : "http://myrtie.org"
+          },
+          {
+            "track_number" : "03",
+            "name" : "adipisci laboriosam eaque",
+            "song_url" : "https://chanel.name"
+          },
+          {
+            "track_number" : "04",
+            "name" : "sed sed deleniti",
+            "song_url" : "https://carmen.info"
+          },
+          {
+            "track_number" : "05",
+            "name" : "sapiente incidunt asperiores",
+            "song_url" : "http://glennie.name"
+          },
+          {
+            "track_number" : "06",
+            "name" : "assumenda accusantium libero",
+            "song_url" : "http://zula.biz"
+          },
+          {
+            "track_number" : "07",
+            "name" : "reprehenderit doloremque ipsum",
+            "song_url" : "http://raymond.org"
+          },
+          {
+            "track_number" : "08",
+            "name" : "consequuntur et repellendus",
+            "song_url" : "https://janessa.org"
+          }
+        ]
+      },
+      {
+        "title" : "repellat adipisci est",
+        "composer_performer" : "Javier Herzog",
+        "cover" : "http://placeimg.com/640/480/animals",
+        "tracklist" : [
+          {
+            "track_number" : "00",
+            "name" : "suscipit quos rem",
+            "song_url" : "https://eusebio.org"
+          },
+          {
+            "track_number" : "01",
+            "name" : "iure tempora vel",
+            "song_url" : "https://charlotte.biz"
+          },
+          {
+            "track_number" : "02",
+            "name" : "consequatur voluptatem est",
+            "song_url" : "https://marielle.info"
+          },
+          {
+            "track_number" : "03",
+            "name" : "qui excepturi sint",
+            "song_url" : "http://hollie.org"
+          },
+          {
+            "track_number" : "04",
+            "name" : "debitis aliquam facilis",
+            "song_url" : "http://amelia.net"
+          },
+          {
+            "track_number" : "05",
+            "name" : "facere explicabo qui",
+            "song_url" : "https://kariane.org"
+          },
+          {
+            "track_number" : "06",
+            "name" : "voluptatum praesentium velit",
+            "song_url" : "https://frederik.biz"
+          },
+          {
+            "track_number" : "07",
+            "name" : "sed et non",
+            "song_url" : "https://filomena.info"
+          },
+          {
+            "track_number" : "08",
+            "name" : "at nostrum sed",
+            "song_url" : "https://stefanie.info"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "bundle_id" : 2,
+    "bonus_info" : [
+      {
+        "title" : "quisquam totam officiis",
+        "composer_performer" : "Emma Swaniawski",
+        "cover" : "http://placeimg.com/640/480/animals",
+        "tracklist" : [
+          {
+            "track_number" : "00",
+            "name" : "autem sit est",
+            "song_url" : "http://macie.org"
+          },
+          {
+            "track_number" : "01",
+            "name" : "sed sint dolorem",
+            "song_url" : "https://tania.name"
+          },
+          {
+            "track_number" : "02",
+            "name" : "neque dolorum nesciunt",
+            "song_url" : "https://joel.net"
+          },
+          {
+            "track_number" : "03",
+            "name" : "temporibus et eaque",
+            "song_url" : "http://briana.org"
+          },
+          {
+            "track_number" : "04",
+            "name" : "voluptatum enim culpa",
+            "song_url" : "http://kristina.org"
+          },
+          {
+            "track_number" : "05",
+            "name" : "dolorum ratione qui",
+            "song_url" : "http://marian.name"
+          },
+          {
+            "track_number" : "06",
+            "name" : "sint quos error",
+            "song_url" : "https://name.net"
+          },
+          {
+            "track_number" : "07",
+            "name" : "voluptatibus ut sed",
+            "song_url" : "https://cullen.info"
+          },
+          {
+            "track_number" : "08",
+            "name" : "iste nihil sed",
+            "song_url" : "http://marley.net"
+          },
+          {
+            "track_number" : "09",
+            "name" : "eum deserunt id",
+            "song_url" : "https://alysson.name"
+          },
+          {
+            "track_number" : "10",
+            "name" : "qui commodi ex",
+            "song_url" : "https://murray.org"
+          },
+          {
+            "track_number" : "11",
+            "name" : "ratione et commodi",
+            "song_url" : "http://sienna.name"
+          },
+          {
+            "track_number" : "12",
+            "name" : "aut nemo eveniet",
+            "song_url" : "https://luis.name"
+          },
+          {
+            "track_number" : "13",
+            "name" : "omnis aliquid omnis",
+            "song_url" : "http://xander.com"
+          },
+          {
+            "track_number" : "14",
+            "name" : "doloribus eos dicta",
+            "song_url" : "https://arlene.net"
+          },
+          {
+            "track_number" : "15",
+            "name" : "quis velit tempore",
+            "song_url" : "http://jaycee.net"
+          },
+          {
+            "track_number" : "16",
+            "name" : "facilis velit quisquam",
+            "song_url" : "http://ethelyn.org"
+          },
+          {
+            "track_number" : "17",
+            "name" : "qui quidem recusandae",
+            "song_url" : "http://carlotta.com"
+          },
+          {
+            "track_number" : "18",
+            "name" : "quia eos aut",
+            "song_url" : "https://leon.org"
+          },
+          {
+            "track_number" : "19",
+            "name" : "eius labore possimus",
+            "song_url" : "http://cornell.info"
+          }
+        ]
+      },
+      {
+        "title" : "quia esse commodi",
+        "composer_performer" : "Mr. Kay Bogan",
+        "cover" : "http://placeimg.com/640/480/animals",
+        "tracklist" : [
+          {
+            "track_number" : "00",
+            "name" : "qui minus quos",
+            "song_url" : "http://lukas.org"
+          },
+          {
+            "track_number" : "01",
+            "name" : "optio inventore voluptatem",
+            "song_url" : "http://orlando.name"
+          },
+          {
+            "track_number" : "02",
+            "name" : "enim possimus sed",
+            "song_url" : "https://lewis.biz"
+          },
+          {
+            "track_number" : "03",
+            "name" : "autem quasi dolor",
+            "song_url" : "http://jaida.biz"
+          },
+          {
+            "track_number" : "04",
+            "name" : "dolores maxime eos",
+            "song_url" : "http://hershel.info"
+          },
+          {
+            "track_number" : "05",
+            "name" : "veritatis numquam repellendus",
+            "song_url" : "http://carmine.net"
+          },
+          {
+            "track_number" : "06",
+            "name" : "repudiandae sint quae",
+            "song_url" : "http://neha.com"
+          },
+          {
+            "track_number" : "07",
+            "name" : "in vel quia",
+            "song_url" : "https://abby.org"
+          },
+          {
+            "track_number" : "08",
+            "name" : "odio rerum eos",
+            "song_url" : "https://nyasia.net"
+          },
+          {
+            "track_number" : "09",
+            "name" : "molestiae illum ipsa",
+            "song_url" : "https://jordyn.org"
+          },
+          {
+            "track_number" : "10",
+            "name" : "et delectus delectus",
+            "song_url" : "http://kacey.info"
+          },
+          {
+            "track_number" : "11",
+            "name" : "distinctio et veniam",
+            "song_url" : "http://lillie.com"
+          },
+          {
+            "track_number" : "12",
+            "name" : "vero reprehenderit nam",
+            "song_url" : "http://alford.name"
+          },
+          {
+            "track_number" : "13",
+            "name" : "saepe qui consequatur",
+            "song_url" : "http://thalia.biz"
+          },
+          {
+            "track_number" : "14",
+            "name" : "cum et inventore",
+            "song_url" : "https://ansel.org"
+          },
+          {
+            "track_number" : "15",
+            "name" : "eos ut architecto",
+            "song_url" : "https://myrtis.org"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "bundle_id" : 3,
+    "bonus_info" : [
+      {
+        "title" : "ipsum at autem",
+        "composer_performer" : "Alyssa Schmeler MD",
+        "cover" : "http://placeimg.com/640/480/animals",
+        "tracklist" : [
+          {
+            "track_number" : "00",
+            "name" : "id ad ut",
+            "song_url" : "http://karli.biz"
+          },
+          {
+            "track_number" : "01",
+            "name" : "consequatur repellendus temporibus",
+            "song_url" : "https://esther.org"
+          },
+          {
+            "track_number" : "02",
+            "name" : "non ut in",
+            "song_url" : "https://mable.biz"
+          },
+          {
+            "track_number" : "03",
+            "name" : "voluptas eum aut",
+            "song_url" : "https://helene.com"
+          },
+          {
+            "track_number" : "04",
+            "name" : "eos et ipsa",
+            "song_url" : "http://caden.biz"
+          },
+          {
+            "track_number" : "05",
+            "name" : "quia voluptas quae",
+            "song_url" : "http://gregg.biz"
+          },
+          {
+            "track_number" : "06",
+            "name" : "odit tenetur et",
+            "song_url" : "https://emerson.biz"
+          },
+          {
+            "track_number" : "07",
+            "name" : "sit qui facere",
+            "song_url" : "http://adam.org"
+          },
+          {
+            "track_number" : "08",
+            "name" : "necessitatibus voluptatibus ea",
+            "song_url" : "https://haley.com"
+          },
+          {
+            "track_number" : "09",
+            "name" : "a sed quibusdam",
+            "song_url" : "http://cali.net"
+          },
+          {
+            "track_number" : "10",
+            "name" : "in qui quis",
+            "song_url" : "http://ryann.net"
+          },
+          {
+            "track_number" : "11",
+            "name" : "est voluptates est",
+            "song_url" : "https://jayda.name"
+          },
+          {
+            "track_number" : "12",
+            "name" : "blanditiis autem ut",
+            "song_url" : "https://will.com"
+          },
+          {
+            "track_number" : "13",
+            "name" : "a quo in",
+            "song_url" : "http://matteo.info"
+          },
+          {
+            "track_number" : "14",
+            "name" : "omnis nostrum quia",
+            "song_url" : "http://raina.name"
+          },
+          {
+            "track_number" : "15",
+            "name" : "saepe delectus aut",
+            "song_url" : "http://hanna.biz"
+          },
+          {
+            "track_number" : "16",
+            "name" : "doloremque porro nulla",
+            "song_url" : "http://lola.net"
+          },
+          {
+            "track_number" : "17",
+            "name" : "itaque ab sunt",
+            "song_url" : "http://rudolph.name"
+          },
+          {
+            "track_number" : "18",
+            "name" : "et labore quod",
+            "song_url" : "https://monty.name"
+          },
+          {
+            "track_number" : "19",
+            "name" : "deleniti libero illo",
+            "song_url" : "http://coby.info"
+          },
+          {
+            "track_number" : "20",
+            "name" : "et dolor doloremque",
+            "song_url" : "https://viola.org"
+          }
+        ]
+      }
+    ]
+  }
+]

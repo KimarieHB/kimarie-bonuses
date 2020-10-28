@@ -39,6 +39,7 @@ class Bonuses extends React.Component {
       }
     })
     .done((data) => {
+
       if (data[0]) {
         if (data[0].bonus_info.length > 1) {
           this.setState({ bonusHeading: 'Bonuses' });
