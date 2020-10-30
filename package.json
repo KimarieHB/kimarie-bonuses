@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
+    "build": "webpack --mode=development",
     "seed": "node database/scripts/seed.js",
     "start": "nodemon server/index.js",
     "test": "jest"
@@ -29,6 +30,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
+    "json-loader": "^0.5.7",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.7",
     "react": "^16.13.1",
