@@ -20,7 +20,11 @@ module.exports = {
         options: {
           presets: ['@babel/preset-react', ['@babel/preset-env', {'targets': 'defaults'}]],
         },
-      }
+      },
+      {
+        test: /.json$/,
+        loader: 'json-loader',
+      },
     ]
   }
 };
