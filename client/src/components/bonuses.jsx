@@ -1,4 +1,5 @@
 import React from 'react';
+//just grab ajax from jquery (tree shaking for webpack)
 import $ from 'jquery';
 import BonusItems from './BonusItems.jsx';
 
@@ -40,7 +41,7 @@ class Bonuses extends React.Component {
       }
     })
     .done((data) => {
-
+      console.log('Service get data', data);
       if (data[0]) {
         if (data[0].bonus_info.length > 1) {
           this.setState({ bonusHeading: 'Bonuses' });
