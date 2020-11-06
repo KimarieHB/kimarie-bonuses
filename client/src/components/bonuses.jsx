@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import BonusItems from './BonusItems.jsx';
 
+
 class Bonuses extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,7 @@ class Bonuses extends React.Component {
 
     $.ajax({
       method: 'GET',
-      url: `http://localhost:3031/bonus/${bundleId}`,
+      url: `/bonus/${bundleId}`,
       crossDomain: true,
       error: (err) => {
         console.log(err);
