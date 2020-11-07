@@ -6,6 +6,12 @@ const path = require('path');
 const morgan = require('morgan');
 const parser = require('body-parser');
 const db = require('../database/index.js');
+// const Brotli = require('broccoli-brotli');
+
+// const tree = new Brotli('app', {
+//   extensions: ['js', 'css', 'svg']
+// })
+
 
 let port = 3031;
 
@@ -28,7 +34,7 @@ app.use('/test', (req, res) => {
 //Get request fired from within the HTML
 app.get('/bonus/:id', cors(), (req, res) => {
   let bundleId = req.params.id;
-  console.log(bundleId);
+
   db.getBonuses(bundleId, (err, results) => {
     if (err) {
       res.send(err);

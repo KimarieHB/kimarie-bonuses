@@ -1,6 +1,7 @@
 import React from 'react';
 //just grab ajax from jquery (tree shaking for webpack)
 import $ from 'jquery';
+import styles from '../../styles/styles.css';
 import BonusItems from './BonusItems.jsx';
 
 
