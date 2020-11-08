@@ -15,7 +15,7 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
 app.use(express.static('client/dist'));
-app.use(compression({ filter: shouldCompress, threshold:0 }));
+app.use(compression({ filter: shouldCompress, threshold: 0 }));
 
 function shouldCompress (req, res) {
   if (req.headers['x-no-compression']) {
