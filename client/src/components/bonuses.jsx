@@ -16,9 +16,7 @@ class Bonuses extends React.Component {
 
     this.selectAlbum = this.selectAlbum.bind(this);
     this.selectSong = this.selectSong.bind(this);
-  }
 
-  componentDidMount() {
     let bundleId = window.location.pathname;
 
     if (bundleId === '/') {
