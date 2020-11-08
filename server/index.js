@@ -1,17 +1,12 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const compression = require('compression');
 const cors = require('cors');
 const path = require('path');
 const morgan = require('morgan');
 const parser = require('body-parser');
 const db = require('../database/index.js');
-// const Brotli = require('broccoli-brotli');
-
-// const tree = new Brotli('app', {
-//   extensions: ['js', 'css', 'svg']
-// })
-
 
 let port = 3031;
 
@@ -20,6 +15,14 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
 app.use(express.static('client/dist'));
+app.use(compression({ filter: shouldCompress, threshold:0 }));
+
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    return false
+  }
+  return compression.filter(req, res)
+}
 
 // Port/connection verification
 app.listen(port, () => {
