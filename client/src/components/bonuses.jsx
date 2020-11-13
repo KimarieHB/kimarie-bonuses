@@ -7,7 +7,7 @@ class Bonuses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showWarning: false,
+      //showWarning: false,
       bonusHeading: 'Bonus',
       bundleNumber: null, //number
       bonus: { bonus_info: [{ cover: '' }] }, //object
@@ -25,7 +25,7 @@ class Bonuses extends React.Component {
       bundleId = parseInt(bundleId.slice(1));
 
       if (bundleId < 1 || bundleId > 100) {
-        this.setState({ showWarning : true });
+        this.state = { showWarning : true };
       }
     }
 
